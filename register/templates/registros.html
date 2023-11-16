@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<main class="container py-5">
+    <section class='card card-body'>
+        <h1 class="display-1 text-center">Registros</h1>
+        <h2 class="display-2 text-center">Lista de mercado</h2>
+
+        <div class="text-center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td >Producto</td>
+                        <td>Costo</td>
+                        <td>Supermercado</td>
+                        <td>Fecha</td>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    {% for compra in compras %}
+                    <tr>
+                        <td>{{compra.producto}}</td>
+                        <td>{{compra.costo}}</td>
+                        <td>{{compra.supermercado}}</td>
+                        <td>{{compra.fecha}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="text-center">
+            <h2 class="display-2 text-center">Gráficos</h2>
+            <img src="data:image/png;base64,{{ image }}" alt="Gráfico">
+        </div>
+    </section>
+</main>
+
+{% endblock %}
